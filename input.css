@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Hind Siliguri";
+  src: url("./fonts/Hind_Siliguri/HindSiliguri-Light.ttf") format("ttf"),
+    url("./fonts/Hind_Siliguri/HindSiliguri-Bold.ttf") format("ttf"),
+    url("./fonts/Hind_Siliguri/HindSiliguri-Medium.ttf") format("ttf"),
+    url("./fonts/Hind_Siliguri/HindSiliguri-SemiBold.ttf") format("ttf"),
+    url("./fonts/Hind_Siliguri/HindSiliguri-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf");
+  font-style: italic;
+}
+
+body {
+  background: url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.hind-siliguri-light {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.hind-siliguri-regular {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hind-siliguri-medium {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.hind-siliguri-semibold {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hind-siliguri-bold {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.playflair-display-regular {
+  font-family: "Playfair Display", serif;
+}
+
+.playflair-display-bold {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
