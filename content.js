@@ -78,7 +78,7 @@ const TESTIMONIALS = [
   {
     name: "Amlan Bora",
     info: `Software Developer`,
-    feedback: `Had a great session, gave me a clear direction & approach to how to prepare for remote developer opportunities! Also, gave me great recommendations for tools I could use while doing so & things I should do to make myself a better developer & candidate for aspired roles.”`,
+    feedback: `Had a great session, gave me a clear direction & approach to how to prepare for remote developer opportunities! Also, gave me great recommendations for tools I could use while doing so & things I should do to make myself a better developer & candidate for aspired roles.`,
   },
   {
     name: "Anjali Mahanty",
