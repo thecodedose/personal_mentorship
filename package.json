@@ -1,8 +1,14 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.1"
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+    "start:app": "node index.js",
+    "start:sync": "browser-sync start --server --files 'index.html'",
+    "start": "concurrently \"npm:build:css\" \"npm:start:app\" \"npm:start:sync\""
   },
-  "dependencies": {
-    "ejs": "^3.1.9"
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "concurrently": "^8.2.2",
+    "ejs": "^3.1.9",
+    "tailwindcss": "^3.4.1"
   }
 }

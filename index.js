@@ -2,41 +2,28 @@ const fs = require("fs")
 const ejs = require("ejs")
 const content = require("./content")
 
-// Path to the EJS template file
-const templatePath = "index.ejs"
-// Path to the output HTML file
-const outputPath = "index.html"
+const ejsFilePath = "index.ejs"
+const htmlOutputPath = "index.html"
 
-// Function to render HTML from the template
 function renderHTML() {
-  // Read the EJS template file
-  fs.readFile(templatePath, "utf8", (err, data) => {
+  ejs.renderFile(ejsFilePath, content, {}, function (err, str) {
     if (err) {
-      console.error("Error reading template file:", err)
+      console.error("Error compiling EJS:", err)
       return
     }
-
-    // Render the template with data
-    const renderedHTML = ejs.render(data, content)
-
-    // Write the rendered HTML to the output file
-    fs.writeFile(outputPath, renderedHTML, "utf8", (err) => {
-      if (err) {
-        console.error("Error writing HTML file:", err)
-      }
-      console.log("HTML file generated successfully!")
-    })
+    fs.writeFileSync(htmlOutputPath, str)
+    console.log(`Compiled ${ejsFilePath} to ${htmlOutputPath}`)
   })
 }
 
 // Render HTML initially
 renderHTML()
 
-// Watch the template file for changes
-fs.watch(templatePath, (eventType, filename) => {
-  console.log(`Template file ${templatePath} changed.`)
-  // Re-render HTML when the template file changes
-  renderHTML()
+fs.watch(ejsFilePath, (eventType, filename) => {
+  if (filename && eventType === "change") {
+    console.log(`${filename} file Changed, recompiling...`)
+    renderHTML()
+  }
 })
 
-console.log(`Watching template file ${templatePath} for changes...`)
+console.log(`Watching template file ${ejsFilePath} for changes...`)
