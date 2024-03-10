@@ -2,6 +2,29 @@
 <html>
   <head>
     <link href="./output.css" rel="stylesheet" />
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const dialog = document.querySelector("dialog");
+        const showButtons = document.getElementsByClassName("open-btn");
+        const closeButtons = document.getElementsByClassName("close-btn");
+
+        if (dialog) {
+          Array.from(showButtons).forEach(button => {
+            button.addEventListener("click", () => {
+              dialog.showModal();
+            });
+          });
+
+          Array.from(closeButtons).forEach(button => {
+            button.addEventListener("click", () => {
+              dialog.close();
+            });
+          });
+        } else {
+          console.error("Dialog element was not found.");
+        }
+      });
+    </script>
   </head>
   <body class="px-20 py-10 lg:px-36">
     <div class="flex justify-center">
@@ -41,9 +64,35 @@
             </li>
             <% } %>
           </ul>
-          <a
+
+          <dialog
+            class="bg-sky-200 w-1/2 hind-siliguri-regular text-center fixed top-1/2 -translate-y-1/2 text-3xl lg:text-xl px-5 py-2 mt-6 text-yellow-950 drop-shadow-solid border rounded-lg align-center border-yellow-900"
+          >
+            <div class="flex flex-col p-8">
+              <a
+                class="p-3 mb-5 w-full text-6xl lg:text-xl rounded-full border border-black"
+                href="https://rzp.io/l/TIMezl6"
+              >
+                Razorpay
+              </a>
+              OR
+              <a
+                href="https://buy.stripe.com/cN27uNbIe1o91y028a"
+                class="p-3 mt-5 w-full text-6xl lg:text-xl rounded-full border border-black"
+              >
+                Stripe
+              </a>
+              <button
+                class="close-btn text-sky-200 text-6xl mt-10 playfair-display-regular lg:text-xl hind-siliguri-bold rounded-full inline-block bg-black px-16 py-10 lg:px-6 lg:py-3"
+                autofocus
+              >
+                Close
+              </button>
+            </div>
+          </dialog>
+          <button
             href="https://rzp.io/l/TIMezl6"
-            class="text-sky-200 inline-block playfair-display-regular lg:hidden text-5xl lg:text-sm hind-siliguri-bold rounded-full  mt-5 bg-black px-16 py-12 lg:px-8 lg:py-5"
+            class="open-btn text-sky-200 inline-block playfair-display-regular lg:hidden text-5xl lg:text-sm hind-siliguri-bold rounded-full  mt-5 bg-black px-16 py-12 lg:px-8 lg:py-5"
           >
             Buy Monthly Personal Mentorship
             <svg
@@ -60,7 +109,7 @@
                 d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
               />
             </svg>
-          </a>
+          </button>
           <h6
             class="block lg:hidden text-xl lg:text-xs ml-5 hind-siliguri-bold"
           >
@@ -255,9 +304,8 @@
               >LinkedIn profile optimisation
             </li>
           </ul>
-          <a
-            href="https://rzp.io/l/TIMezl6"
-            class="text-sky-200 text-5xl playfair-display-regular lg:text-xl hind-siliguri-bold rounded-full inline-block mt-5 bg-black px-16 py-10 lg:px-8 lg:py-5"
+          <button
+            class="open-btn text-sky-200 text-5xl playfair-display-regular lg:text-xl hind-siliguri-bold rounded-full inline-block mt-5 bg-black px-16 py-10 lg:px-8 lg:py-5"
           >
             Buy Monthly Personal Mentorship
             <svg
@@ -274,7 +322,7 @@
                 d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
               />
             </svg>
-          </a>
+          </button>
           <h6 class="text-xl lg:text-xs ml-5 hind-siliguri-bold">
             *Only 3 spots left
           </h6>
