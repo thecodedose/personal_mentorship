@@ -68,6 +68,7 @@ const SKILLS = [
 
 const FEATURES = [
   "I can help you with interview preparation.",
+  "I can help you with participating in open source programs like Google Summer of Code and Outreachy.",
   "I can help you with mock interviews.",
   "I can help you create study plans to achieve your goals.",
   "I can help you with your web development doubts.",
